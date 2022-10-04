@@ -1,6 +1,9 @@
-# Simple captcha module
+# OXID eSales Simple Captcha Module modified by Kussin | eCommerce und Online-Marketing
 
 ## Description
+
+**NOTE:** This module is a fork of the original [OXID eSales Simple Captcha Module](https://github.com/OXIDprojects/captcha-module). It is not compatible with the 
+original module which added additional settings to the module configuration like enabling/disabling of scopes.
 
 This module provides a simple captcha ("Completely Automated Public Turing test to tell Computers and Humans Apart")
 challenge (distorted characters in an image).
@@ -48,12 +51,32 @@ git clone https://github.com/OXIDprojects/captcha-module.git captcha
 
 Disable the module in administration area and delete the module folder.
 
-## License
+## Change log
 
-Licensing of the software product depends on the shop edition used. The software for OXID eShop Community Edition
-is published under the GNU General Public License v3. You may distribute and/or modify this software according to
-the licensing terms published by the Free Software Foundation. Legal licensing terms regarding the distribution of
-software being subject to GNU GPL can be found under http://www.gnu.org/licenses/gpl.html. The software for OXID eShop
-Professional Edition and Enterprise Edition is released under commercial license. OXID eSales AG has the sole rights to
-the software. Decompiling the source code, unauthorized copying as well as distribution to third parties is not
-permitted. Infringement will be reported to the authorities and prosecuted without exception.
+[OXID eSales CHANGELOG](CHANGELOG.md)
+
+## Licence
+
+[End-User Software License Agreement](LICENSE)
+
+## User Guide
+
+[User Guide](USER_GUIDE.md)
+
+## Support
+
+Kussin | eCommerce und Online-Marketing GmbH<br>
+Fahltskamp 3<br>
+25462 Rellingen<br>
+Germany
+
+Fon: +49 (4101) 85868 - 0<br>
+Email: info@kussin.de
+
+## Licence
+
+[End-User Software License Agreement](LICENSE)
+
+## Copyright
+
+(c) 2006-2022 Kussin | eCommerce und Online-Marketing GmbH

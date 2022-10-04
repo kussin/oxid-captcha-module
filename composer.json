@@ -3,7 +3,7 @@
   "description": "This is Captcha module for OXID eShop.",
   "type": "oxideshop-module",
   "keywords": ["oxid", "modules", "eShop", "captcha"],
-  "homepage": "https://www.oxid-esales.com/en/home.html",
+  "homepage": "https://www.kussin.de",
   "license": [
     "GPL-3.0",
     "proprietary"

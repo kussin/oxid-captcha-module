@@ -61,7 +61,15 @@ $aModule = array(
         array('template' => 'form/forgotpwd_email.tpl', 'block'=>'captcha_form', 'file'=>'/application/views/blocks/captcha_form_forgotpwd.tpl'),
     ),
     'settings'    => array(
-        array('group' => 'main', 'name' => 'oecaptchakey', 'type' => 'str', 'value' => ''),
+        array('group' => 'main', 'name' => 'oecaptchakey', 'type' => 'str', 'value' => 'abcdefghijkmnpqrstuvwxyz23456789'),
+        array('group' => 'view', 'name' => 'oecaptchadetailsenabled', 'type' => 'bool', 'value' => FALSE),
+        array('group' => 'view', 'name' => 'oecaptchacontactenabled', 'type' => 'bool', 'value' => TRUE),
+        array('group' => 'view', 'name' => 'oecaptchaforgotpwdenabled', 'type' => 'bool', 'value' => FALSE),
+        array('group' => 'view', 'name' => 'oecaptchainviteenabled', 'type' => 'bool', 'value' => FALSE),
+        array('group' => 'view', 'name' => 'oecaptchanewsletterenabled', 'type' => 'bool', 'value' => FALSE),
+        array('group' => 'view', 'name' => 'oecaptchapricealarmenabled', 'type' => 'bool', 'value' => TRUE),
+        array('group' => 'view', 'name' => 'oecaptchasuggestenabled', 'type' => 'bool', 'value' => FALSE),
+        array('group' => 'view', 'name' => 'oecaptchawarticledetailsenabled', 'type' => 'bool', 'value' => TRUE),
     ),
     'events'       => array(
         'onActivate'   => 'oecaptchaevents::onActivate',

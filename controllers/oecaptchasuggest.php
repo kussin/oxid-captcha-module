@@ -18,6 +18,13 @@ class oeCaptchaSuggest extends oeCaptchaSuggest_parent
     protected $captcha = null;
 
     /**
+     * Flag for checking if CAPTCHA is enabled.
+     *
+     * @var bool
+     */
+    protected $enabled = null;
+
+    /**
      * Sends product suggestion mail and returns a URL according to
      * URL formatting rules.
      *
@@ -29,7 +36,7 @@ class oeCaptchaSuggest extends oeCaptchaSuggest_parent
     public function send()
     {
         // spam spider prevension
-        if (!$this->getCaptcha()->passCaptcha()) {
+        if (!$this->getCaptcha()->passCaptcha() && $this->isEnabled()) {
             return false;
         }
 
@@ -48,5 +55,19 @@ class oeCaptchaSuggest extends oeCaptchaSuggest_parent
         }
 
         return $this->captcha;
+    }
+
+    /**
+     * Template variable getter. Returns bool value if CAPTCHA is enabled
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        if ($this->enabled === null) {
+            $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchasuggestenabled');
+        }
+
+        return $this->enabled;
     }
 }

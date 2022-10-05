@@ -13,6 +13,13 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
     protected $captcha = null;
 
     /**
+     * Flag for checking if CAPTCHA is enabled.
+     *
+     * @var bool
+     */
+    protected $enabled = null;
+
+    /**
      * Composes and sends user written message, returns false if some parameters
      * are missing.
      *
@@ -20,7 +27,7 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
      */
     public function forgotpassword()
     {
-        if (!$this->getCaptcha()->passCaptcha()) {
+        if (!$this->getCaptcha()->passCaptcha() && $this->isEnabled()) {
             return false;
         }
 
@@ -41,4 +48,17 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
         return $this->captcha;
     }
 
+    /**
+     * Template variable getter. Returns bool value if CAPTCHA is enabled
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        if ($this->enabled === null) {
+            $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchaforgotpwdenabled');
+        }
+
+        return $this->enabled;
+    }
 }

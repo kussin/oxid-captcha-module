@@ -36,7 +36,7 @@ class oeCaptchaSuggest extends oeCaptchaSuggest_parent
     public function send()
     {
         // spam spider prevension
-        if (!$this->getCaptcha()->passCaptcha() && $this->isEnabled()) {
+        if (!$this->getCaptcha()->passCaptcha() && $this->isCaptchaEnabled()) {
             return false;
         }
 
@@ -62,7 +62,7 @@ class oeCaptchaSuggest extends oeCaptchaSuggest_parent
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isCaptchaEnabled()
     {
         if ($this->enabled === null) {
             $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchasuggestenabled');

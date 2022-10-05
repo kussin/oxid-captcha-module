@@ -41,7 +41,7 @@ class oeCaptchaNewsletter extends oeCaptchaNewsletter_parent
      */
     public function getCaptcha()
     {
-        if ($this->captcha === null) {
+        if ($this->captcha === null && $this->isCaptchaEnabled()) {
             $this->captcha = oxNew('oeCaptcha');
         }
 
@@ -53,7 +53,7 @@ class oeCaptchaNewsletter extends oeCaptchaNewsletter_parent
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isCaptchaEnabled()
     {
         if ($this->enabled === null) {
             $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchanewsletterenabled');

@@ -29,7 +29,7 @@ class oeCaptchaWArticleDetails extends oeCaptchaWArticleDetails_parent
      */
     public function getCaptcha()
     {
-        if ($this->captcha === null && $this->isEnabled()) {
+        if ($this->captcha === null && $this->isCaptchaEnabled()) {
             $this->captcha = oxNew('oeCaptcha');
         }
         return $this->captcha;
@@ -40,7 +40,7 @@ class oeCaptchaWArticleDetails extends oeCaptchaWArticleDetails_parent
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isCaptchaEnabled()
     {
         if ($this->enabled === null) {
             $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchapricealarmenabled')

@@ -62,7 +62,7 @@ $aModule = array(
     ),
     'settings'    => array(
         array('group' => 'main', 'name' => 'oecaptchakey', 'type' => 'str', 'value' => 'abcdefghijkmnpqrstuvwxyz23456789'),
-        array('group' => 'view', 'name' => 'oecaptchadetailsenabled', 'type' => 'bool', 'value' => FALSE),
+//        array('group' => 'view', 'name' => 'oecaptchadetailsenabled', 'type' => 'bool', 'value' => TRUE),
         array('group' => 'view', 'name' => 'oecaptchacontactenabled', 'type' => 'bool', 'value' => TRUE),
         array('group' => 'view', 'name' => 'oecaptchaforgotpwdenabled', 'type' => 'bool', 'value' => FALSE),
         array('group' => 'view', 'name' => 'oecaptchainviteenabled', 'type' => 'bool', 'value' => FALSE),

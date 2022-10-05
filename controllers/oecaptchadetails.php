@@ -19,13 +19,6 @@ class oeCaptchaDetails extends oeCaptchaDetails_parent
     protected $captcha = null;
 
     /**
-     * Flag for checking if CAPTCHA is enabled.
-     *
-     * @var bool
-     */
-    protected $enabled = null;
-
-    /**
      * Validates email
      * address. If email is wrong - returns false and exits. If email
      * address is OK - creates price alarm object and saves it
@@ -36,7 +29,7 @@ class oeCaptchaDetails extends oeCaptchaDetails_parent
      */
     public function addme()
     {
-        if (!$this->getCaptcha()->passCaptcha(false) && $this->isEnabled()) {
+        if (!$this->getCaptcha()->passCaptcha(false)) {
             $this->_iPriceAlarmStatus = 2;
             return;
         }
@@ -55,19 +48,5 @@ class oeCaptchaDetails extends oeCaptchaDetails_parent
             $this->captcha = oxNew('oeCaptcha');
         }
         return $this->captcha;
-    }
-
-    /**
-     * Template variable getter. Returns bool value if CAPTCHA is enabled
-     *
-     * @return bool
-     */
-    public function isEnabled()
-    {
-        if ($this->enabled === null) {
-            $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchadetailsenabled');
-        }
-
-        return $this->enabled;
     }
 }

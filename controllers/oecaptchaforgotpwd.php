@@ -27,7 +27,7 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
      */
     public function forgotpassword()
     {
-        if (!$this->getCaptcha()->passCaptcha() && $this->isEnabled()) {
+        if (!$this->getCaptcha()->passCaptcha() && $this->isCaptchaEnabled()) {
             return false;
         }
 
@@ -53,7 +53,7 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isCaptchaEnabled()
     {
         if ($this->enabled === null) {
             $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchaforgotpwdenabled');

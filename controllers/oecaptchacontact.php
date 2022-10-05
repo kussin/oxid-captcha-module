@@ -27,7 +27,7 @@ class oeCaptchaContact extends oeCaptchaContact_parent
      */
     public function send()
     {
-        if (!$this->getCaptcha()->passCaptcha() && $this->isEnabled()) {
+        if (!$this->getCaptcha()->passCaptcha() && $this->isCaptchaEnabled()) {
             return false;
         }
 
@@ -53,7 +53,7 @@ class oeCaptchaContact extends oeCaptchaContact_parent
      *
      * @return bool
      */
-    public function isEnabled()
+    public function isCaptchaEnabled()
     {
         if ($this->enabled === null) {
             $this->enabled = (bool) oxRegistry::getConfig()->getConfigParam('oecaptchacontactenabled');

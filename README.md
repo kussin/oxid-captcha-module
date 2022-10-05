@@ -28,14 +28,38 @@ In order to install the module via composer, run the following commands in comma
 (where the shop's composer.json file resides).
 
 ```
-composer require oxid-projects/captcha-module
+composer require oxid-projects/captcha-module --no-update
+```
+
+#### Add fork to composer.json
+
+Read for more details: https://stackoverflow.com/a/13500676
+
+```
+{
+    "repositories": [
+        "kussin_oxidcaotchamodule": {
+            "type": "vcs",
+            "url": "https://github.com/kussin/oxid-captcha-module.git"
+        }
+    ],
+    "require": {
+        "oxid-projects/captcha-module": "dev-master"
+    }
+}
+```
+
+And then run the following command in commandline of your shop base directory (where the shop's composer.json file resides).
+
+```
+composer update --no-interactions
 ```
 
 ### Module installation via repository cloning
 
 Clone the module to your OXID eShop **modules/oe/** directory:
 ```
-git clone https://github.com/OXIDprojects/captcha-module.git captcha
+git clone https://github.com/kussin/oxid-captcha-module.git
 ```
 
 ### Module installation from zip package

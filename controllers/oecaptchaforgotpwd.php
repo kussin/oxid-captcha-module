@@ -27,8 +27,10 @@ class oeCaptchaForgotPwd extends oeCaptchaForgotPwd_parent
      */
     public function forgotpassword()
     {
-        if (!$this->getCaptcha()->passCaptcha() && $this->isCaptchaEnabled()) {
-            return false;
+        if ($this->isCaptchaEnabled()) {
+            if (!$this->getCaptcha()->passCaptcha()) {
+                return false;
+            }
         }
 
         return parent::forgotpassword();

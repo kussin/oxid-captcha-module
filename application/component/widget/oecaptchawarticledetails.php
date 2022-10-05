@@ -29,9 +29,12 @@ class oeCaptchaWArticleDetails extends oeCaptchaWArticleDetails_parent
      */
     public function getCaptcha()
     {
-        if ($this->captcha === null && $this->isCaptchaEnabled()) {
-            $this->captcha = oxNew('oeCaptcha');
+        if ($this->isCaptchaEnabled()) {
+            if ($this->captcha === null) {
+                $this->captcha = oxNew('oeCaptcha');
+            }
         }
+
         return $this->captcha;
     }
 

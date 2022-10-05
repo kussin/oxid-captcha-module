@@ -32,8 +32,10 @@ class oeCaptchaInvite extends oeCaptchaInvite_parent
      */
     public function send()
     {
-        if (!$this->getCaptcha()->passCaptcha() && $this->isCaptchaEnabled()) {
-            return false;
+        if ($this->isCaptchaEnabled()) {
+            if (!$this->getCaptcha()->passCaptcha()) {
+                return false;
+            }
         }
 
         return parent::send();

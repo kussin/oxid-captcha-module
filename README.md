@@ -79,10 +79,6 @@ Disable the module in administration area and delete the module folder.
 
 [OXID eSales CHANGELOG](CHANGELOG.md)
 
-## Licence
-
-[End-User Software License Agreement](LICENSE)
-
 ## User Guide
 
 [User Guide](USER_GUIDE.md)
